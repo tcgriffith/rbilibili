@@ -1,0 +1,37 @@
+---
+title: "Untitled"
+author: "TC"
+date: "10/21/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+library(jsonlite)
+
+api_getdanmaku= function(cid=5846059){
+  url = "https://api.bilibili.com/x/v1/dm/list.so?oid="
+
+  url.cid = paste0(url, cid)
+  # resp = fromJSON(url.cid)
+  return(resp)
+}
+```
+
+
+```{r}
+url = "https://api.bilibili.com/x/v1/dm/list.so?oid=5846059"
+danmaku = xml2::read_html(url)
+```
+
+
+```{r}
+# api_gettags()
+# api_getdanmaku()
+```
+
